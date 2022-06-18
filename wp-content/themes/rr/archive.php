@@ -1,6 +1,7 @@
 <?php
 get_header();
 $term = get_queried_object();
+$termName = $term->name;
 $termSlug = $term->slug;
 $termTaxonomy = $term->taxonomy;
 
@@ -35,7 +36,7 @@ $fullSection .= '<div class="container">';
 $fullSection .= '<div class="row">';
 $fullSection .= '<div class="col-md-8">';
 $fullSection .= '<div class="cmn_heading">';
-$fullSection .= '<a href="#"><h2>Celebrity</h2></a>';
+$fullSection .= '<a href="#"><h2>' . $termName . '</h2></a>';
 $fullSection .= '</div>';
 echo $fullSection;
 // $post_query = new WP_Query(array(
