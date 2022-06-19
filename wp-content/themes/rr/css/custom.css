@@ -718,6 +718,19 @@ input[type=number] {
     line-height: 100%;
 }
 
+.page-numbers {
+    margin-right: 6px;
+    padding: 0 12px;
+    border: 1px solid #010101;
+    text-transform: uppercase;
+    line-height: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .3s;
+    font-family: system-ui;
+    color: #000;
+}
+
 .pagination_box li a {
     margin-right: 6px;
     padding: 0 12px;
