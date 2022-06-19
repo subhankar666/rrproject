@@ -16,7 +16,11 @@
 }
 @media(max-width: 991px){
 }
-@media(max-width: 767px){
+@media(max-width: 767px){    
+    /* Handle */
+    .other_menu ul::-webkit-scrollbar-thumb {background: #fff; }
+    /* Handle on hover */
+    .other_menu ul::-webkit-scrollbar-thumb:hover {background: #fff; }
 }
 @media(max-width: 575px){
 }
