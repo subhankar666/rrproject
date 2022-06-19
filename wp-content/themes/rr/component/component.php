@@ -71,6 +71,16 @@ class rrComponent
         return $postReturn;
 
     }
+    public static function logoFetch($customLogoId, $headerClass)
+    {
+        $logo = wp_get_attachment_image_src($customLogoId, "full");
+        $logoUrl = $logo[0];
+        $logoReturn = '<a href="' . site_url('/') . '" class="' . $headerClass . '">';
+        $logoReturn .= '<img src="' . $logoUrl . '" alt="Logo">';
+        $logoReturn .= '</a>';
+        return $logoReturn;
+
+    }
 }
 
 $componentObj = new rrComponent();

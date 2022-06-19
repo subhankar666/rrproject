@@ -46,9 +46,11 @@
                         </ul>
                      </div>
                   </div>
-                  <a href="<?php echo site_url('/') ?>" class="logo_header">
-                     <img src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt="Logo">
-                  </a>
+                  <?php
+$customLogoId = get_theme_mod("custom_logo");
+echo rrComponent::logoFetch($customLogoId, $headerClass = "logo_header");
+?>
+
                   <a href="#" class="log_in"><i class="fas fa-user"></i></a>
                </div>
                <div class="container other_menu">

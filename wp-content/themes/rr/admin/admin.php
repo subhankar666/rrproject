@@ -27,8 +27,14 @@ class AdminClass
             $query->set('paged', 0);
         }
     }
+    public function my_theme_custom_upload_mimes($existing_mimes)
+    {
+        $existing_mimes['svg'] = 'image/svg';
+        return $existing_mimes;
+    }
 
 }
 
 $adminObj = new AdminClass();
 add_action('pre_get_posts', array($adminObj, 'custom_pre_get_posts'));
+add_filter('mime_types', array($adminObj, 'my_theme_custom_upload_mimes'));
