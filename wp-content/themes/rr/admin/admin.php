@@ -26,6 +26,10 @@ class AdminClass
             $query->set('page_val', get_query_var('paged'));
             $query->set('paged', 0);
         }
+        if ($query->is_main_query() && !$query->is_feed() && !is_admin() && is_author()) {
+            $query->set('page_val', get_query_var('paged'));
+            $query->set('paged', 0);
+        }
     }
     public function my_theme_custom_upload_mimes($existing_mimes)
     {

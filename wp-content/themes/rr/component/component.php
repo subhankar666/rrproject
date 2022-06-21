@@ -71,6 +71,51 @@ class rrComponent
         return $postReturn;
 
     }
+    public function authorList($users)
+    {
+        $usersReturn = "";
+        foreach ($users as $user) {
+            $userBio = wp_trim_words(get_the_author_meta('description', $user->ID), 30, "...");
+            $userAvatar = get_avatar_url($user->ID, array("size" => 178));
+            $userUrl = get_author_posts_url($user->ID);
+            $usersReturn .= '<div class="authors_box">';
+            $usersReturn .= '<a href="' . $userUrl . '" class="author_img">';
+            $usersReturn .= '<img src="' . $userAvatar . '">';
+            $usersReturn .= '</a>';
+            $usersReturn .= '<div class="author_cnt">';
+            $usersReturn .= '<a href="' . $userUrl . '"><h3>' . $user->display_name . '</h3></a>';
+            $usersReturn .= '<div class="author_social_hndl">';
+            $usersReturn .= '<a href="javascript:void(0)"><i class="fab fa-twitter-square"></i></a>';
+            $usersReturn .= '<a href="javascript:void(0)"><i class="fab fa-facebook-square"></i></a>';
+            $usersReturn .= '<a href="javascript:void(0)"><i class="fab fa-linkedin"></i></a>';
+            $usersReturn .= '<a href="javascript:void(0)"><i class="fab fa-instagram-square"></i></a>';
+            $usersReturn .= '</div>';
+            $usersReturn .= '<p>' . $userBio . '</p>';
+            $usersReturn .= '</div>';
+            $usersReturn .= '</div>';
+        }
+
+        return $usersReturn;
+
+    }
+    public function authorPostList($thumbnail, $title, $excerpt, $author, $permalink, $date, $month)
+    {
+        $authorPostReturn = '<div class="box_post_top">';
+        $authorPostReturn .= '<div class="date">';
+        $authorPostReturn .= '<span>' . $month . '</span>';
+        $authorPostReturn .= '<span>' . $date . '</span>';
+        $authorPostReturn .= '</div>';
+        $authorPostReturn .= '<div class="img_top_post">';
+        $authorPostReturn .= '<img src="' . $thumbnail . '" alt="">';
+        $authorPostReturn .= '</div>';
+        $authorPostReturn .= '<div class="txt_top_post">';
+        $authorPostReturn .= '<a href="' . $permalink . '"><h3>' . $title . '</h3></a>';
+        $authorPostReturn .= '<div class="foot_post">';
+        $authorPostReturn .= '</div>';
+        $authorPostReturn .= '</div>';
+        $authorPostReturn .= '</div>';
+        return $authorPostReturn;
+    }
     public static function logoFetch($customLogoId, $headerClass)
     {
         $logo = wp_get_attachment_image_src($customLogoId, "full");
