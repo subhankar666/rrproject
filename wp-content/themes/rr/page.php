@@ -15,4 +15,6 @@ $pageSection = '</div>';
 $pageSection .= '</div>';
 $pageSection .= '</section>';
 echo $pageSection;
+?>
+<?php
 get_footer();
