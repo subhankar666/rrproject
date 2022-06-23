@@ -11,13 +11,10 @@ $pageSection = '</div>';
 $pageSection .= '</div>';
 echo $pageSection;
 get_sidebar();
-?>
 
-<?php
 $pageSection = '</div>';
 $pageSection .= '</div>';
 $pageSection .= '</section>';
 echo $pageSection;
-?>
-<?php
+
 get_footer();
