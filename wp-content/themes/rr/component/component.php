@@ -1,7 +1,7 @@
 <?php
 class rrComponent
 {
-    public function postGrid($thumbnail, $title, $excerpt, $author, $permalink, $timeAgo)
+    public function postGrid($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $timeAgo)
     {
         $postReturn = '<div class="box_post_top">';
         $postReturn .= '<div class="img_top_post">';
@@ -10,7 +10,7 @@ class rrComponent
         $postReturn .= '<div class="txt_top_post">';
         $postReturn .= '<a href="' . $permalink . '"><h3>' . $title . '</h3></a>';
         $postReturn .= '<p>' . $excerpt . '</p>';
-        $postReturn .= '<a href="#" class="top_post_tag">' . $author . '</a>';
+        $postReturn .= '<a href="' . $authorLink . '" class="top_post_tag">' . $author . '</a>';
         $postReturn .= '<div class="foot_post">';
         $postReturn .= '<p>' . $timeAgo . '</p>';
         // $postReturn .= '<a href="javascript:void(0)"><span class="cmnt_count"style="background-image: url(images/msg.png);">1</span>Comments</a>';
@@ -20,7 +20,12 @@ class rrComponent
         return $postReturn;
 
     }
-    public function topBannerStructure($thumbnail, $title, $excerpt, $author, $permalink, $timeAgo)
+    public function getThumbnail($thumbnail)
+    {
+        $relThumbmail = !empty(get_the_post_thumbnail_url()) ? get_the_post_thumbnail_url() : get_template_directory_uri() . "/images/GettyImages.jpg";
+        return $relThumbmail;
+    }
+    public function topBannerStructure($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $timeAgo)
     {
 
         $postReturn = '<section class="top_post_outer">';
@@ -35,7 +40,7 @@ class rrComponent
         $postReturn .= '</div>';
         $postReturn .= '<div class="txt_top_post">';
         $postReturn .= '<a href="' . $permalink . '"><h3>' . $title . '</h3></a>';
-        $postReturn .= '<a href="#" class="top_post_tag">' . $author . '</a>';
+        $postReturn .= '<a href="' . $authorLink . '" class="top_post_tag">' . $author . '</a>';
         $postReturn .= '<div class="foot_post">';
         $postReturn .= ' <p>' . $timeAgo . '</p>';
         // $postReturn.='<a href="#"><span class="cmnt_count"style="background-image: url(images/msg.png);">1</span>Comments</a>';
@@ -51,7 +56,7 @@ class rrComponent
         return $postReturn;
 
     }
-    public function topPostStructure($thumbnail, $title, $excerpt, $author, $permalink, $timeAgo)
+    public function topPostStructure($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $timeAgo)
     {
         $postReturn = '<div class="box_post_top img_full">';
         $postReturn .= '<div class="img_top_post">';
@@ -60,7 +65,7 @@ class rrComponent
         $postReturn .= '<div class="txt_top_post">';
         $postReturn .= '<a href="' . $permalink . '"><h3>' . $title . '</h3></a>';
         $postReturn .= '<p>' . $excerpt . '</p>';
-        $postReturn .= '<a href="#" class="top_post_tag">' . $author . '</a>';
+        $postReturn .= '<a href="' . $authorLink . '" class="top_post_tag">' . $author . '</a>';
         $postReturn .= '<div class="foot_post">';
         $postReturn .= '<p>' . $timeAgo . '</p>';
         // $postReturn .= '<a href="#"><span class="cmnt_count"style="background-image: url(images/msg.png);">1</span>Comments</a>';
@@ -98,7 +103,7 @@ class rrComponent
         return $usersReturn;
 
     }
-    public function authorPostList($thumbnail, $title, $excerpt, $author, $permalink, $date, $month)
+    public function authorPostList($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $date, $month)
     {
         $authorPostReturn = '<div class="box_post_top">';
         $authorPostReturn .= '<div class="date">';

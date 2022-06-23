@@ -25,87 +25,42 @@
       <?php wp_head();?>
     </head>
    <body>
-      <header class="header_outer">
-         <div class="header_inner">
-            <nav class="nav_outer">
-               <div class="container">
-                  <div class="burger_menu">
-                     <button class="burger_tgl">
-                        <span></span>
-                     </button>
-                     <div class="menu_main">
-                        <button class="menu_close"></button>
-                        <ul>
-                           <li><a href="#">Movies</a></li>
-                           <li><a href="#">TV</a></li>
-                           <li><a href="#">Celebrity</a></li>
-                           <li><a href="#">Sports</a></li>
-                           <li><a href="#">Music</a></li>
-                           <li><a href="#">Lifestyle</a></li>
-                           <li><a href="#">Food & Drink</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <?php
+   <body>
+      <?php
+$headSection = '<header class="header_outer">';
+$headSection .= '<div class="header_inner">';
+$headSection .= '<nav class="nav_outer">';
+$headSection .= '<div class="container">';
+$headSection .= '<div class="burger_menu">';
+$headSection .= '<button class="burger_tgl">';
+$headSection .= '<span></span>';
+$headSection .= '</button>';
+$headSection .= '<div class="menu_main">';
+$headSection .= '<button class="menu_close"></button>';
+echo $headSection;
+wp_nav_menu(array(
+    "theme_location" => "primary-menu",
+));
+$headSection = '</div>';
+$headSection .= '</div>';
+echo $headSection;
 $customLogoId = get_theme_mod("custom_logo");
 echo rrComponent::logoFetch($customLogoId, $headerClass = "logo_header");
-?>
+$headSection = '<a href="#" class="log_in" style="visibility:hidden"><i class="fas fa-user"></i></a>';
+$headSection .= '</div>';
+$headSection .= '<div class="container other_menu">';
+$headSection .= '<ul>';
+echo $headSection;
 
-                  <a href="#" class="log_in"><i class="fas fa-user"></i></a>
-               </div>
-               <div class="container other_menu">
-                  <ul>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                     <li><a href="#">Test</a></li>
-                  </ul>
-               </div>
-            </nav>
-         </div>
-      </header>
-      <!-- Body Start -->
+$catLists = get_categories();
+$catMenuSingle = '';
+foreach ($catLists as $catlist) {
+    $catMenuSingle .= '<li><a href="' . get_term_link($catlist->term_id) . '">' . $catlist->name . '</a></li>';
+}
+echo $catMenuSingle;
+$headSection = '</ul>';
+$headSection .= '</div>';
+$headSection .= '</nav>';
+$headSection .= '</div>';
+$headSection .= '</header>';
+echo $headSection;

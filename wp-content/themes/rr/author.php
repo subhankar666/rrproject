@@ -44,6 +44,9 @@ $post_query = new WP_Query(array(
 if ($post_query->have_posts()) {
     while ($post_query->have_posts()) {
         $post_query->the_post();
+        global $post;
+        $authorId = $post->post_author;
+        $authorLink = get_author_posts_url($authorId);
         $thumbnail = get_the_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . "/images/GettyImages.jpg";
         $title = get_the_title();
         $excerpt = wp_trim_words(get_the_content(), 7, "...");
@@ -51,7 +54,7 @@ if ($post_query->have_posts()) {
         $permalink = get_the_permalink();
         $date = get_the_date('j');
         $month = get_the_date('F');
-        echo $componentObj->authorPostList($thumbnail, $title, $excerpt, $author, $permalink, $date, $month);
+        echo $componentObj->authorPostList($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $date, $month);
 
     }
     $big = 999999999; // need an unlikely integer

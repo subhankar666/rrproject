@@ -21,13 +21,16 @@ $post_query = new WP_Query(array(
 if ($post_query->have_posts()) {
     while ($post_query->have_posts()) {
         $post_query->the_post();
+        global $post;
+        $authorId = $post->post_author;
+        $authorLink = get_author_posts_url($authorId);
         $thumbnail = get_the_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . "/images/GettyImages.jpg";
         $title = get_the_title();
         $excerpt = wp_trim_words(get_the_content(), 7, "...");
         $author = get_the_author();
         $permalink = get_the_permalink();
         $timeAgo = $adminObj->time_ago();
-        echo $componentObj->topBannerStructure($thumbnail, $title, $excerpt, $author, $permalink, $timeAgo);
+        echo $componentObj->topBannerStructure($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $timeAgo);
 
     }
 }
@@ -55,13 +58,16 @@ $post_test_query = new WP_Query(array(
 if ($post_test_query->have_posts()) {
     while ($post_test_query->have_posts()) {
         $post_test_query->the_post();
+        global $post;
+        $authorId = $post->post_author;
+        $authorLink = get_author_posts_url($authorId);
         $thumbnail = get_the_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . "/images/GettyImages.jpg";
         $title = get_the_title();
         $excerpt = wp_trim_words(get_the_content(), 7, "...");
         $author = get_the_author();
         $permalink = get_the_permalink();
         $timeAgo = $adminObj->time_ago();
-        echo $componentObj->postGrid($thumbnail, $title, $excerpt, $author, $permalink, $timeAgo);
+        echo $componentObj->postGrid($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $timeAgo);
     }
     $big = 999999999; // need an unlikely integer
 

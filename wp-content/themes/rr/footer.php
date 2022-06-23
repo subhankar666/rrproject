@@ -2,42 +2,13 @@
          <div class="container">
             <div class="row">
                <div class="col-md-4">
-                  <div class="ft_widget">
-                     <a href="#" class="footer_logo">
-                        <img src="<?php echo get_template_directory_uri() ?>/images/logo.svg">
-                     </a>
-                     <p>Follow us on:</p>
-                     <ul>
-                        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-flipboard"></i></a></li>
-                     </ul>
-                  </div>
+               <?php dynamic_sidebar('footer-sidebar1')?>
                </div>
                <div class="col-md-4">
-                  <div class="menu_widget">
-                     <ul>
-                        <li><a href="#">MISSION STATEMENT</a></li>
-                        <li><a href="#">PARTNERS</a></li>
-                        <li><a href="#">AUTHORS</a></li>
-                        <li><a href="#">PRIVACY POLICY</a></li>
-                        <li><a href="#">CONTACT US</a></li>
-                        <li><a href="#">COMPLAINTS</a></li>
-                     </ul>
-                  </div>
+               <?php dynamic_sidebar('footer-sidebar2')?>
                </div>
                <div class="col-md-4">
-                  <div class="last_widget">
-                     <ul class="text-center">
-                        <li>a proud member of</li>
-                        <li><a href="#"><img src="<?php echo get_template_directory_uri() ?>/images/grv_media.svg" alt=""></a></li>
-                        <li>© 2022 GRV Media Ltd. All Rights Reserved</li>
-                        <li>GRV Media Ltd, 18 Mulberry Avenue, Widnes,</li>
-                        <li>Cheshire, WA8 0WN</li>
-                        <li>Company No. 04155089</li>
-                     </ul>
-                  </div>
+               <?php dynamic_sidebar('footer-sidebar3')?>
                </div>
             </div>
             <button class="notification_bell"><i class="fas fa-bell"></i></button>
