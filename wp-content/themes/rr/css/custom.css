@@ -1127,6 +1127,7 @@ input[type=number] {
     margin-bottom: 30px;
 }
 
+.single_post_box p a,
 .single_link_cnt p a {
     color: #000;
     border-bottom: 1px solid #000;
