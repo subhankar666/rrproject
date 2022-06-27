@@ -1143,4 +1143,29 @@ input[type=number] {
     list-style: none;
     background: #fbfafa;
     border-radius: 15px;
+    margin-top: 10px;
+}
+
+.single-post-caption {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, .4);
+    padding: 5px;
+    line-height: 100%;
+}
+
+.single_post_box>.wp-caption {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.wp-caption-text {
+    font-size: .7em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1.8;
+    color: #939191;
+    border-bottom: 1px solid #939191;
 }
