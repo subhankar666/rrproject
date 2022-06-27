@@ -27,6 +27,7 @@ $singlePostSection .= '</div>';
 $singlePostSection .= '<div class="img_top_post single_post_feature">';
 $singlePostSection .= '<span class="lable_tag">Featured</span>';
 $singlePostSection .= '<img src="' . $componentObj->getThumbnail(get_the_post_thumbnail_url()) . '" alt="">';
+$singlePostSection .= '<p class="single-post-caption">' . get_the_post_thumbnail_caption() . '</p>';
 $singlePostSection .= '</div>';
 $singlePostSection .= '</div>';
 $singlePostSection .= '</div>';
