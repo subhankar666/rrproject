@@ -84,7 +84,7 @@ if ($wp_rel_query->have_posts()) {
         $wp_rel_query->the_post();
 
         $relateSinglePost .= '<div class="col-lg-4 col-md-6">';
-        $relateSinglePost .= '<a href="' . get_the_permalink() . '"';
+        $relateSinglePost .= '<a href="' . get_the_permalink() . '">';
         $relateSinglePost .= '<div class="relate_post_box">';
         $relateSinglePost .= '<div class="post_img_relate">';
         $relateSinglePost .= '<img src="' . $componentObj->getThumbnail(get_the_post_thumbnail_url()) . '" alt="">';
