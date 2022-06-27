@@ -25,7 +25,7 @@
       <?php wp_head();?>
     </head>
    <body>
-   <body>
+   <p>testing push</p>
       <?php
 $headSection = '<header class="header_outer">';
 $headSection .= '<div class="header_inner">';
