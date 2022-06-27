@@ -45,7 +45,7 @@ echo $fullSection;
 $paged = (get_query_var('page_val')) ? absint(get_query_var('page_val')) : 1;
 $post_test_query = new WP_Query(array(
     "post_type" => "post",
-    "posts_per_page" => 3,
+    "posts_per_page" => 10,
     'paged' => $paged,
     'tax_query' => array(
         array(
@@ -63,7 +63,7 @@ if ($post_test_query->have_posts()) {
         $authorLink = get_author_posts_url($authorId);
         $thumbnail = get_the_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . "/images/GettyImages.jpg";
         $title = get_the_title();
-        $excerpt = wp_trim_words(get_the_content(), 7, "...");
+        $excerpt = wp_trim_words(get_the_content(), 30, "...");
         $author = get_the_author();
         $permalink = get_the_permalink();
         $timeAgo = $adminObj->time_ago();
