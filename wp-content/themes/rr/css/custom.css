@@ -893,6 +893,7 @@ input[type=number] {
     color: #b6bde0;
     font-size: 30px;
     font-weight: 800;
+    text-transform: uppercase;
 }
 
 .single_post_bnr h2 {
