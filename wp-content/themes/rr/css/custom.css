@@ -144,7 +144,7 @@ input[type=number] {
     display: block;
     width: 392px;
     position: relative;
-    top: 61px;
+    top: 40px;
     background: #fff;
     padding: 0 15px;
 }
@@ -686,7 +686,7 @@ input[type=number] {
 
 .other_menu {
     position: relative;
-    top: 80px;
+    top: 50px;
 }
 
 /* width */
@@ -1168,4 +1168,8 @@ p.wp-caption-text {
     line-height: 1.8;
     color: #939191;
     border-bottom: 1px solid #939191;
+}
+
+.nav_outer {
+    height: 70px;
 }
