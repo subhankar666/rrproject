@@ -1161,7 +1161,7 @@ input[type=number] {
     max-width: 100%;
 }
 
-.wp-caption-text {
+p.wp-caption-text {
     font-size: .7em;
     padding: 1em 0;
     text-align: center;
