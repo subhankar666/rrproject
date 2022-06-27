@@ -1126,3 +1126,13 @@ input[type=number] {
 .author_post_all .box_post_top .txt_top_post a h3 {
     margin-bottom: 30px;
 }
+
+.single_link_cnt p a {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.authors_box.single_page_author .author_cnt p {
+    font-size: 14px;
+    line-height: 1.4;
+}
