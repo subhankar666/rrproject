@@ -13,7 +13,7 @@ $singlePostSection .= '<div class="row">';
 $singlePostSection .= '<div class="col-12">';
 $singlePostSection .= '<div class="single_post_blk">';
 $singlePostSection .= '<div class="single_post_bnr">';
-$singlePostSection .= '<a href="#" class="tag_post">' . $catFetch->name . '</a>';
+$singlePostSection .= '<a href="' . get_term_link($catFetch->term_id) . '" class="tag_post">' . $catFetch->name . '</a>';
 $singlePostSection .= '<h2>' . get_the_title() . '</h2>';
 $singlePostSection .= '<div class="author_dtls d-flex">';
 $singlePostSection .= '<div class="athr_img">';
