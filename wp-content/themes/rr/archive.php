@@ -26,7 +26,7 @@ if ($post_query->have_posts()) {
         $authorLink = get_author_posts_url($authorId);
         $thumbnail = get_the_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . "/images/GettyImages.jpg";
         $title = get_the_title();
-        $excerpt = wp_trim_words(get_the_content(), 7, "...");
+        $excerpt = wp_trim_words(get_the_content(), 30, "...");
         $author = get_the_author();
         $permalink = get_the_permalink();
         $timeAgo = $adminObj->time_ago();

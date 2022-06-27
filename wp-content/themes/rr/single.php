@@ -52,9 +52,16 @@ $singlePostSection .= '</div>';
 $singlePostSection .= '<div class="single_post_box">';
 echo $singlePostSection;
 the_content();
-?>
-
-<?php
+$singlePostSection = '<div class="authors_box single_page_author">';
+$singlePostSection .= '<a href="' . get_author_posts_url($authorId) . '" class="author_img">';
+$singlePostSection .= '<img src="' . get_avatar_url($authorId) . '">';
+$singlePostSection .= '</a>';
+$singlePostSection .= '<div class="author_cnt">';
+$singlePostSection .= '<a href="' . get_author_posts_url($authorId) . '"><h3>' . get_the_author_meta('display_name', $authorId) . '</h3></a>';
+$singlePostSection .= '<p>' . get_the_author_meta('description', $authorId) . '</p>';
+$singlePostSection .= '</div>';
+$singlePostSection .= '</div>';
+echo $singlePostSection;
 $singlePostSection = '</div>';
 echo $singlePostSection;
 $wp_rel_query = new WP_Query(array(
