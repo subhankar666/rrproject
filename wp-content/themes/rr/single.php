@@ -52,6 +52,9 @@ $singlePostSection .= '</div>';
 $singlePostSection .= '<div class="single_post_box">';
 echo $singlePostSection;
 the_content();
+?>
+
+<?php
 $singlePostSection = '</div>';
 echo $singlePostSection;
 $wp_rel_query = new WP_Query(array(
