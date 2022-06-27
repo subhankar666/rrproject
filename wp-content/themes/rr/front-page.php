@@ -54,7 +54,7 @@ if ($post_query->have_posts()) {
         $permalink = get_the_permalink();
         $timeAgo = $adminObj->time_ago();
         $categoryHeadSection = '<div class="cmn_heading">';
-        $categoryHeadSection .= '<a href="#"><h2>' . $category->name . '</h2></a>';
+        $categoryHeadSection .= '<a href="#"><h2>LATEST </h2></a>';
         $categoryHeadSection .= '</div>';
         echo $categoryHeadSection;
         echo $componentObj->topPostStructure($thumbnail, $title, $excerpt, $author, $authorLink, $permalink, $timeAgo);
