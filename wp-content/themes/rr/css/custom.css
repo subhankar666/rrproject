@@ -1137,3 +1137,10 @@ input[type=number] {
     font-size: 14px;
     line-height: 1.4;
 }
+
+.single_post_box pre {
+    padding: 15px;
+    list-style: none;
+    background: #fbfafa;
+    border-radius: 15px;
+}
